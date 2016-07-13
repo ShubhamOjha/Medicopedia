@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/Medicopedia/CSS/styles.css">
+
+<meta charset="ISO-8859-1">
+
+<title>Medicopedia</title>
+</head>
+<body>
+<script>
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var d = 0; d < dropdowns.length; d++) {
+      var openDropdown = dropdowns[d];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+<div class="top-bar" style="width: 100%;"><img src="/Medicopedia/images/top.png" width="100%">
+</div>
+<ul>
+  <li><a class="active" href="/Medicopedia/html/home.html">Home</a></li>
+  <li><a href="/Medicopedia/html/login.html">Login</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Registration</a>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="/Medicopedia/jsp/docreg.jsp">Doctor</a>
+      <a href="/Medicopedia/html/patreg.html">Patient</a>
+    </div>
+  </li>
+  <li><a href="/Medicopedia/html/AboutUs.html">About Us</a></li>
+  <li><a href="/Medicopedia/html/ContactUs.html">Contact Us</a></li>
+</ul>
+<div>
+ <div style="float: left;"><img src="/Medicopedia/images/doctors.jpg">
+</div>
+<div class="main" style="width: 800px; padding: 20px; margin-left: 400px;">
+
+<h1>Welcome to Medicopedia</h1>
+
+
+<p>Mediocopedia is powerful, flexible, and easy to use and is designed and developed to deliver real conceivable benefits to patients.
+Medicopedia is designed in a simplifies manner so that everyone in need of medical support can easily get medical support just through an online portal.
+Patient's Health is all that matters to US.
+</p>
+
+<br>
+
+<h1>Services</h1>
+<ul style="background: white;">
+<li><strong>Immediate access </strong>to primary care physicians and a variety of specialists from home or work, securely, privately, and in real time</li>
+<li><strong>Convenience</strong> of receiving care on patient’s own terms, using the Web, phone</li>
+<li><strong>Choice </strong>of providers based on patient-driven criteria – allowed to ask queries from a huge number of Doctor's from around the world.</li>
+<li><strong>Quality care</strong> from credentialed physicians who can provide consultations, recommend treatment and write prescriptions online if necessary</li>
+<li><strong>Continuity of care</strong> with the ability to access physicians regardless of location and to share detailed care reports with primary care physicians</li>
+
+</ul>
+<p>&nbsp;</p>
+
+</div>
+</div>
+<footer>
+<p>Medicopedia &copy 2016
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+

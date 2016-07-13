@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/Medicopedia/CSS/styles.css">
+<meta charset="ISO-8859-1">
+<title>Patient Registration</title>
+</head>
+<body class="top">
+<script>
+
+function formValidation()  
+{  
+var uid = document.registration.txtid;  
+var passid = document.registration.pwd;  
+var uname = document.registration.txtnm;  
+var uadd = document.registration.add;   
+var uemail = document.registration.txtem;  
+if(userid_validation(uid,5,12))  
+{  
+if(passid_validation(passid,7,12))  
+{  
+if(allLetter(uname))  
+{  
+if(alphanumeric(uadd))  
+{       
+if(ValidateEmail(uemail))  
+{  
+if(validsex(umsex,ufsex))  
+{  
+}  
+}   
+}  
+}   
+}  
+}      
+return false;  
+}  
+function userid_validation(uid,mx,my)  
+{  
+var uid_len = uid.value.length;  
+if (uid_len == 0 || uid_len >= my || uid_len < mx)  
+{  
+alert("User Id should not be empty / length be between "+mx+" to "+my);  
+uid.focus();  
+return false;  
+}  
+return true;  
+}
+function passid_validation(passid,mx,my)  
+{  
+var passid_len = passid.value.length;  
+if (passid_len == 0 ||passid_len >= my || passid_len < mx)  
+{  
+alert("Password should not be empty / length be between "+mx+" to "+my);  
+passid.focus();  
+return false;  
+}  
+return true;  
+}
+function allLetter(uname)  
+{   
+var letters = /^[A-Za-z]+$/;  
+if(uname.value.match(letters))  
+{  
+return true;  
+}  
+else  
+{  
+alert('Username must have alphabet characters only');  
+uname.focus();  
+return false;  
+}  
+}
+function alphanumeric(uadd)  
+{   
+var letters = /^[0-9a-zA-Z]+$/;  
+if(uadd.value.match(letters))  
+{  
+return true;  
+}  
+else  
+{  
+alert('User address must have alphanumeric characters only');  
+uadd.focus();  
+return false;  
+}  
+}
+function ValidateEmail(uemail)  
+{  
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+if(uemail.value.match(mailformat))  
+{  
+return true;  
+}  
+else  
+{  
+alert("You have entered an invalid email address!");  
+uemail.focus();  
+return false;  
+}  
+}
+
+
+
+
+
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var d = 0; d < dropdowns.length; d++) {
+      var openDropdown = dropdowns[d];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+<div class="top-bar" style="width: 100%;"><img src="/Medicopedia/images/top.png" width="100%" >
+</div>
+<ul>
+  <li><a class="active" href="/Medicopedia/html/home.html">Home</a></li>
+  <li><a href="/Medicopedia/html/login.html">Login</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Registration</a>
+    <div class="dropdown-content" id="myDropdown">
+     <a href="/Medicopedia/jsp/docreg.jsp">Doctor</a>
+      <a href="/Medicopedia/html/patreg.html">Patient</a>
+    </div>
+  </li>
+  <li><a href="/Medicopedia/html/AboutUs.html">About Us</a></li>
+  <li><a href="/Medicopedia/html/ContactUs.html">Contact Us</a></li>
+</ul>
+<div class="cbody" >
+<div id="sc-edprofile" style="width: 1000px; margin-left: 150px;" >
+  <h1>Patient Registration</h1>
+  <div class="sc-container">
+
+
+
+
+<form method="post" name='registration' action="/Medicopedia/Patreg" padding-left="50px" margin-left="60px" align="left" padding-left="50px" >
+
+
+<table style="margin-top:80px; margin-left:120px;">
+<tr><td>UserId</td><td><input type="text" name="txtid" id="txtid"
+required="required" placeholder="enter name" ></td></tr>
+
+<tr><td>Name</td><td><input type="text" name="txtnm" id="txtnm"
+required="required" placeholder="enter name"></td></tr>
+
+<tr><td>Email</td><td><input type="email" name="txtem" id="txtem"
+required="required" placeholder="enter email"></td></tr>
+
+
+<tr><td>Phone Number</td><td><input type="number" name="txtno" id="txtno"
+required="required" placeholder="enter phoneno."><td></tr>
+
+<tr><td>Password</td><td><input type="password" name="pwd" id="pwd"
+required="required" placeholder="enter password"></td></tr>
+
+<tr><td><input type="radio" name="rgender" value="male" >male</td><td>
+<input type="radio" name="rgender" value="female" >female</td></tr>
+
+<tr><td>Age</td><td><input type="number" name="age" id="age"
+required="required" placeholder="how young you are"><td></tr>
+
+<tr><td>Address</td><td><textarea name="add" rows="4" cols="60"></textarea></td></tr>
+
+
+<tr><td><input type="submit" value="submit" onclick="formValidation()"></td><td><input type="reset" value="reset"></td></tr>
+</table>
+
+</form>
+
+
+
+
+
+</div></div>
+
+</div>
+
+
+<footer>
+<p>Medicopedia &copy 2016
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
